@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: one
+  to: one
+  message: MyString
+  senttime: 2017-09-24 11:39:08
+
+two:
+  from: two
+  to: two
+  message: MyString
+  senttime: 2017-09-24 11:39:08

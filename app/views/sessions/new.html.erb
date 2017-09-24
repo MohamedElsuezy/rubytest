@@ -1,0 +1,19 @@
+<h1>Login</h1>
+<% if flash[:alert] %>
+  <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+<%= form_tag do |form| %>
+
+  <div class="field">
+    <%= label_tag :name ,'User name' %>
+    <%= text_field_tag(:name, params[:name], {:class => "form-control"}) %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :password , 'Password' %>
+    <%= password_field_tag(:password, params[:password], {:class => "form-control"}) %>
+  </div>
+  <div class="actions" style="margin-top:20px">
+    <%= submit_tag('login', {:class => "btn btn-primary"}) %>
+  </div>
+<% end %>

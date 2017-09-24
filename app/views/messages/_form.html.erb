@@ -1,0 +1,30 @@
+<%= form_with(model: message, local: true) do |form| %>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= form.hidden_field :from_id,:value =>user_id %>
+
+  <div class="field">
+    <%= form.label :to_id %>
+    <%= select_tag ":Message[to_id]", grouped_options_for_select(User.for_select) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_field(:message,{:class => 'form-control'})   %>
+  </div>
+
+  <div class="actions" style="margin-top:20px">
+    <%= form.submit({:class => 'btn btn-primary'}) %>
+  </div>
+<% end %>
